@@ -1,7 +1,200 @@
-<!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Roll Me This</title>
+      <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+      <link rel="stylesheet" href="/css/site.css">
+   </head>
+   <body>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+         <div class="container">
+            <div class="navbar-header">
+               <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                              </button>-->
+               <a class="navbar-brand" href="/">Roll Me This</a>
+            </div>
+            <div class="navbar-collapse collapse">
+               <ul class="nav navbar-nav">
+                  <!--<li><a asp-page="/Index">Home</a></li>
+                     <li><a asp-page="/DiceRoller">Dice Roller</a></li>
+                                     <li><a asp-page="/About">About</a></li>
+                                     <li><a asp-page="/Contact">Contact</a></li>-->
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <div class="container body-content">
+         <br>
+         <div id="form-body">
+            <div name="playerCharacter-Data" class="page-wrapper" id="playerCharacter-Data">
+               <div name="playerCharacter-Class" id="playerCharacter-Class" class="element-wrapper">
+                  <label for="playerCharacter-class">Select your character's class</label>
+                  <select name="class-select" class="form-control" id="playerCharacter-class">
+                     <option value="Bard">Bard</option>
+                     <option value="Cleric">Cleric</option>
+                     <option value="Druid">Druid</option>
+                     <option value="Fighter">Fighter - Eldritch Knight</option>
+                     <option value="Monk">Monk - Way Of The Four Elements</option>
+                     <option value="Paladin">Paladin</option>
+                     <option value="Ranger">Ranger</option>
+                     <option value="Rogue">Rogue - Arcane Trickster</option>
+                     <option value="Sorcerer">Sorcerer</option>
+                     <option value="Warlock">Warlock</option>
+                     <option value="Wizard">Wizard</option>
+                  </select>
+               </div>
+               <div name="playerCharacter-CastingStat" id="playerCharacter-CastingStat" class="element-wrapper">
+                  <label for="playerCharacter-CASTSTAT" id="CastStatLabel">Enter your character's <font color="red">Charisma</font> score</label>
+                  <input type="number" name="select-CASTSTAT" class="form-control" id="playerCharacter-CASTSTAT" min="1" max="24" value="8">
+               </div>
+               <br><br><br>
+               <div name="playerCharacter-Level" id="playerCharacter-Level" class="element-wrapper">
+                  <label for="chacaterLevel-select" id="CharacterLevelLabel">Select character's level</label>
+                  <select name="select-character-level" class="form-control" id="chacaterLevel-select">
+                     <option value="1">1st</option>
+                     <option value="2">2nd</option>
+                     <option value="3">3rd</option>
+                     <option value="4">4th</option>
+                     <option value="5">5th</option>
+                     <option value="6">6th</option>
+                     <option value="7">7th</option>
+                     <option value="8">8th</option>
+                     <option value="9">9th</option>
+                     <option value="10">10th</option>
+                     <option value="11">11th</option>
+                     <option value="12">12th</option>
+                     <option value="13">13th</option>
+                     <option value="14">14th</option>
+                     <option value="15">15th</option>
+                     <option value="16">16th</option>
+                     <option value="17">17th</option>
+                     <option value="18">18th</option>
+                     <option value="19">19th</option>
+                     <option value="20">20th</option>
+                  </select>
+               </div>
+               <br><br>
+               <div name="moveToSelectSpell-Button" id="moveToSelectSpell-Button" class="button-wrapper">
+                  <button id="spellSelect" class="btn btn-primary btn-lg" onclick="CurrentPlayerChacater.calculateCharacter();">Select Spell »</button>
+               </div>
+            </div>
+            <div name="lore-Bard-Check" id="lore-Bard-Check" class="page-wrapper">
+               <div class="element-wrapper">
+                  <p><b>Are you a College of Lore Bard?</b></p>
+                  <input type="radio" name="lore-Check" value="Yes"> Yes<br>
+                  <input type="radio" name="lore-Check" value="No"> No<br>
+               </div>
+            </div>
+            <div class="page-wrapper" id="spellCaster" name="spellCaster">
+               <div id="spellLevel-Select" name="spellLevel-Select" class="element-wrapper">
+                  <div name="backToPlayerCharacterSelect-Button" id="backToPlayerCharacterSelect-Button" class="button-wrapper">
+                     <button id="returnPlayerCharacter" class="btn btn-danger btn-lg">« PC Select</button>
+                  </div>
+                  <br>
+                  <div id="spell-SaveDC-AttackMod" class="element-wrapper">
+                     <p id="spell-SaveDC"></p>
+                     <p id="spell-AttackMod"></p>
+                  </div>
+                  <br>
+                  <div class="element-wrapper" id="spell-Level">
+                     <label for="spell-level">Select the Spell's Level</label>
+                     <select name="spell-level-select" class="form-control" id="spell-level"></select>
+                  </div>
+               </div>
+               <div name="cantrips" id="cantrips" class="element-wrapper">
+                  <label for="s0-s">Select Cantrip</label>
+                  <select name="select-cantrip" multiple="" class="form-control" id="spellLevel0-select"></select>
+               </div>
+               <div name="level1-spells" id="level1-spells" class="element-wrapper">
+                  <label for="select-spellLevel1">Select 1st Level Spell</label>
+                  <select name="select-spellLevel1" multiple="" class="form-control" id="select-spellLevel1"></select>
+               </div>
+               <div name="level2-spells" id="level2-spells" class="element-wrapper">
+                  <label for="select-spellLevel2">Select 2nd Level Spell</label>
+                  <select name="select-spellLevel2" multiple="" class="form-control" id="select-spellLevel2"></select>
+               </div>
+               <div name="level3-spells" id="level3-spells" class="element-wrapper">
+                  <label for="select-spellLevel3">Select 3rd Level Spell</label>
+                  <select name="select-spellLevel3" multiple="" class="form-control" id="select-spellLevel3"></select>
+               </div>
+               <div name="level4-spells" id="level4-spells" class="element-wrapper">
+                  <label for="select-spellLevel4">Select 4th Level Spell</label>
+                  <select name="select-spellLevel4" multiple="" class="form-control" id="select-spellLevel4"></select>
+               </div>
+               <div name="level5-spells" id="level5-spells" class="element-wrapper">
+                  <label for="select-spellLevel5">Select 5th Level Spell</label>
+                  <select name="select-spellLevel5" multiple="" class="form-control" id="select-spellLevel5"></select>
+               </div>
+               <div name="level6-spells" id="level6-spells" class="element-wrapper">
+                  <label for="select-spellLevel6">Select 6th Level Spell</label>
+                  <select name="select-spellLevel6" multiple="" class="form-control" id="select-spellLevel6"></select>
+               </div>
+               <div name="level7-spells" id="level7-spells" class="element-wrapper">
+                  <label for="select-spellLevel7">Select 7th Level Spell</label>
+                  <select name="select-spellLevel7" multiple="" class="form-control" id="select-spellLevel7"></select>
+               </div>
+               <div name="level8-spells" id="level8-spells" class="element-wrapper">
+                  <label for="select-spellLevel8">Select 8th Level Spell</label>
+                  <select name="select-spellLevel8" multiple="" class="form-control" id="select-spellLevel8"></select>
+               </div>
+               <div name="level9-spells" id="level9-spells" class="element-wrapper">
+                  <label for="select-spellLevel9">Select 9th Level Spell</label>
+                  <select name="select-spellLevel9" multiple="" class="form-control" id="select-spellLevel9"></select>
+               </div>
+               <div name="selectLevelCastAt" id="levelCast" class="element-wrapper">
+                  <label for="select-levelCast">Select Level to Cast Spell at</label>
+                  <select name="select-levelCast" class="form-control" id="select-levelCast"></select>
+               </div>
+               <!--<div name="Animate-Objects" id="Animate-Objects" class="element-wrapper">
+                  <p><b>Select what objects you are animating</b></p>
+                  <p><b>Objects remaining: </b></p>
+                  <form action="" class="form-inline">
+                      <div name="tinyObjects-wrapper" id="tinyObjects-wrapper" class="element-wrapper form-group">
+                          <label for="AO-tiny-objects" id="TinyObjectsLabel">Tiny Objects (Cost 1)</label><br />
+                          <input type="number" name="AO-tiny-objects" id="AO-tiny-objects" class="form-control" value="0" min="0" />
+                      </div>
+                  
+                      <div name="smallObjects-wrapper" id="smallObjects-wrapper" class="element-wrapper form-group">
+                          <label for="AO-small-objects" id="SmallObjectsLabel">Small Objects (Cost 1)</label><br />
+                          <input type="number" name="AO-small-objects" id="AO-small-objects" class="form-control" value="0" min="0" />
+                      </div>
+                  
+                      <div name="mediumObjects-wrapper" id="mediumObjects-wrapper" class="element-wrapper form-group">
+                          <label for="AO-medium-objects" id="MediumObjectLebel">Medium Objects (Cost 2)</label><br />
+                          <input type="number" name="AO-medium-objects" id="AO-medium-objects" class="form-control" value="0" min="0" />
+                      </div>
+                  
+                      <div name="largeObjects-wrapper" id="largeObjects-wrapper" class="element-wrapper form-group">
+                          <label for="AO-large-objects" id="LargeObjectLebel">Large Objects (Cost 4)</label><br />
+                          <input type="number" name="AO-large-objects" id="AO-large-objects" class="form-control" value="0" min="0" />
+                      </div>
+                  
+                      <div name="hugeObjects-wrapper" id="hugeObjects-wrapper" class="element-wrapper form-group">
+                          <label for="AO-huge-objects" id="HugeObjectLebel">Huge Objects (Cost 8)</label><br />
+                          <input type="number" name="AO-huge-objects" id="AO-huge-objects" class="form-control" value="0" min="0" />
+                      </div>
+                  </form>
+                  </div>-->
+               <div class="element-wrapper" id="spellCastButton">
+                  <button id="castSpell" class="btn btn-primary btn-lg">Cast Spell</button>
+               </div>
+               <div class="element-wrapper" id="spellOutput">
+                  <p id="output"></p>
+               </div>
+            </div>
+            <hr>
+            <footer>
+               <p>© 2019 - Roll Me This</p>
+            </footer>
+         </div>
+      </div>
+      <script src="/lib/jquery/dist/jquery.js"></script>
+      <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+      <script src="/js/site.js?v=K8iAF4Of5MoscwRvRE3WfBdfyU5YQ7JDM-_j0MnvA5I"></script>
+   </body>
 </html>
