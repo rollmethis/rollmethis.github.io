@@ -1,0 +1,130 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    background: url("https://litrpgreads.com/wp-content/uploads/2018/10/71a5BsoYYiL.jpg");
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: center top;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+#form-body {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    zoom: 120%;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.element-wrapper{
+    padding: 2px;
+}
+
+#playerCharacter-Data {
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    display: block;
+    /*display: flex;
+    flex-wrap: wrap;
+    justify-content: center;*/
+}
+
+#playerCharacter-Class {
+    width: 50%;
+    float: left;
+    padding-right: 5px;
+    /*flex: 0 0 50%;*/
+}
+
+#playerCharacter-CastingStat {
+    width: 50%;
+    float: right;
+    /*flex: 1;*/
+}
+
+#playerCharacter-Level{
+    padding-top: 30px;
+}
+
+#spellCaster {
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    display: none;
+}
+#current-Casting-Score {
+    float: left;
+    /*display: block;*/
+    display: inline-block;
+}
+#playerCharacter-CASTSTAT {
+    /*float: left;
+    display: inline-block;*/
+}
+#lore-Bard-Check {
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    display: none;
+}
+
+div#Animate-Objects {
+    display: inline-block;
+}
+
+label#Animate-Objects {
+    display: block;
+}
+
+#spell-SaveDC-AttackMod{
+    zoom: 115%;
+}
+
+#spellCastButton{
+    padding-top: 15px;
+}
+#spellOutput {
+    padding-top: 15px;
+}
+
+/*#spell-SaveDC{
+    float: left;
+    
+}
+
+#spell-AttackMod {
+    float: right;
+    display: inline;
+}*/
