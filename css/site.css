@@ -62,7 +62,7 @@ body {
 }
 
 #playerCharacter-Class {
-    width: 50%;
+    /*width: 50%;*/
     float: left;
     padding-right: 5px;
     /*flex: 0 0 50%;*/
@@ -70,7 +70,7 @@ body {
 
 #playerCharacter-CastingStat {
     width: 50%;
-    float: right;
+    float: left;
     /*flex: 1;*/
 }
 
