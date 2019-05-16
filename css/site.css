@@ -69,7 +69,7 @@ body {
 }
 
 #playerCharacter-CastingStat {
-    width: 50%;
+    /*width: 50%;*/
     float: left;
     /*flex: 1;*/
 }
