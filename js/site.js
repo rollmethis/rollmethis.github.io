@@ -62,13 +62,13 @@ $(document).ready(function () {
         $("#CastStatLabel").html("");
 
         if (PCClass == "Bard" || PCClass == "Paladin" || PCClass == "Sorcerer" || PCClass == "Warlock") {
-            $("#CastStatLabel").html("Enter your character's <font color='red'>Charisma</font> score");
+            $("#CastStatLabel").html("Enter your <font color='red'>Charisma</font> score");
         }
         else if (PCClass == "Cleric" || PCClass == "Druid" || PCClass == "Monk" || PCClass == "Ranger") {
-            $("#CastStatLabel").html("Enter your character's <font color='green'>Wisdom</font> score");
+            $("#CastStatLabel").html("Enter your <font color='green'>Wisdom</font> score");
         }
         else if (PCClass == "Fighter" || PCClass == "Rogue" || PCClass == "Wizard") {
-            $("#CastStatLabel").html("Enter your character's <font color='blue'>Intelligence</font> score");
+            $("#CastStatLabel").html("Enter your <font color='blue'>Intelligence</font> score");
         }
     };
 
