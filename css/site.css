@@ -90,8 +90,8 @@ body {
     display: inline-block;
 }
 #playerCharacter-CASTSTAT {
-    /*float: left;
-    display: inline-block;*/
+    float: left;
+    /*display: inline-block;*/
 }
 #lore-Bard-Check {
     width: 80%;
